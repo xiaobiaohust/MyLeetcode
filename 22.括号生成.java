@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * @lc app=leetcode.cn id=22 lang=java
  *
@@ -5,6 +8,13 @@
  */
 
 // @lc code=start
+/**
+ * 回溯法
+ * 在序列有效得前提下，继续添加
+ * '('左括号在数量小于n的情况下，可以添加
+ * ')'只在右括号数量小于左括号数量的时候可以添加
+ * ''
+ */
 class Solution {
     public List<String> generateParenthesis(int n) {
         List<String> list = new ArrayList<String>();
