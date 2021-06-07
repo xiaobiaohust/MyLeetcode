@@ -9,6 +9,10 @@ import java.util.List;
  */
 
 // @lc code=start
+/**
+ * 回溯法
+ * 类似求N皇后数量，只不过在这基础上使用了回溯，计算答案
+ */
 class Solution {
     public List<List<String>> solveNQueens(int n) {
         int[]record = new int[n];
@@ -17,7 +21,7 @@ class Solution {
         return list;
 
     }
-      // 使用递归解决
+      // 使用回溯
       private void process(List<List<String>> list,List<String>tempList,int[] record,int n,int i){
         if(tempList.size()==n){
             list.add(new ArrayList<>(tempList));
