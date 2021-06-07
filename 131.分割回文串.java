@@ -8,8 +8,9 @@ import java.util.List;
  */
 
 // @lc code=start
-/**
- * 类似求字符串称为回文串的最小切割数，只不过需要在使用回溯法
+/**回溯法
+ * 先求字符串的回文串dp,
+ * 然后使用回溯法求解，dp用来判断子串是否是回文串
  */
 class Solution {
     public List<List<String>> partition(String s) {
