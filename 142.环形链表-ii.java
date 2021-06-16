@@ -21,6 +21,7 @@ public class Solution {
         if(head==null||head.next==null||head.next.next==null){
             return null;
         }
+        // 先走一步在遍历
         ListNode cur1 = head.next;
         ListNode cur2 = head.next.next;
         while(cur1!=cur2){
@@ -36,8 +37,6 @@ public class Solution {
             cur2 = cur2.next;
         }
         return cur1;
-        
-        
     }
 }
 // @lc code=end
