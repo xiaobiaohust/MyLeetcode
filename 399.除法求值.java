@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,6 +25,9 @@ class Solution {
         }
         int len = map.size();
         double[][] matric = new double[len][len];
+        for(int i=0;i<len;++i){
+            Arrays.fill(matric[i], -1.0);
+        }
         for(int i=0;i<equations.size();++i){
             int row = map.get(equations.get(i).get(0));
             int col = map.get(equations.get(i).get(1));
@@ -31,6 +35,18 @@ class Solution {
             matric[row][col] = value;
             matric[col][row] = 1.0/value;
         }
+
+        //使用Floyd算法
+        for(int k=0;k<len;++k){
+            for(int i=0;i<len;++i){
+                for(int j=0;j<len;++j){
+                    if(matric[i][k]>-1&&matric[k][j]>-1){
+                        matric[i][j] = matric[i][k]*matric[k][j];
+                    }
+                }
+            }
+        }
+
         double[] res = new double[queries.size()];
         for(int i=0;i<queries.size();++i){
             if(!map.containsKey(queries.get(i).get(0)) || !map.containsKey(queries.get(i).get(1))){
@@ -38,9 +54,10 @@ class Solution {
             }else{
                 int row = map.get(queries.get(i).get(0));
                 int col = map.get(queries.get(i).get(1));
+                res[i] = matric[row][col];
             }
         }
-
+        return res;
     }
 }
 // @lc code=end
