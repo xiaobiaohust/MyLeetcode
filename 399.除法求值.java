@@ -10,6 +10,10 @@ import jdk.javadoc.internal.doclets.toolkit.resources.doclets;
  * [399] 除法求值
  */
 
+ /**
+  * floyd算法
+  将除法建模为图，求图中的任意两个的除法，使用Floyd算法
+  */
 // @lc code=start
 class Solution {
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
