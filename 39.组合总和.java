@@ -28,7 +28,6 @@ class Solution {
             tempList.add(candidates[i]);
             backtrack(list, tempList, candidates, remain-candidates[i], i);
             tempList.remove(tempList.size()-1);
-           
         }
     }
 }
